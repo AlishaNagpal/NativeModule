@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		00E356F31AD99517003FC87E /* NativeModuleTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 00E356F21AD99517003FC87E /* NativeModuleTests.m */; };
+		0C16F5C823EA9CA3009BB81E /* Hello.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C16F5C723EA9CA3009BB81E /* Hello.swift */; };
+		0C16F5CA23EA9CCB009BB81E /* Hello.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C16F5C923EA9CCB009BB81E /* Hello.m */; };
 		13B07FBC1A68108700A75B9A /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB01A68108700A75B9A /* AppDelegate.m */; };
 		13B07FBD1A68108700A75B9A /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 13B07FB11A68108700A75B9A /* LaunchScreen.xib */; };
 		13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 13B07FB51A68108700A75B9A /* Images.xcassets */; };
@@ -46,6 +48,9 @@
 		00E356F21AD99517003FC87E /* NativeModuleTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NativeModuleTests.m; sourceTree = "<group>"; };
 		0380A16DE77B1114B45B523A /* libPods-NativeModuleTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-NativeModuleTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		0560A965E3546DCCF6DEDF97 /* Pods-NativeModule-tvOSTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NativeModule-tvOSTests.release.xcconfig"; path = "Target Support Files/Pods-NativeModule-tvOSTests/Pods-NativeModule-tvOSTests.release.xcconfig"; sourceTree = "<group>"; };
+		0C16F5C623EA9CA3009BB81E /* NativeModule-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NativeModule-Bridging-Header.h"; sourceTree = "<group>"; };
+		0C16F5C723EA9CA3009BB81E /* Hello.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Hello.swift; sourceTree = "<group>"; };
+		0C16F5C923EA9CCB009BB81E /* Hello.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Hello.m; sourceTree = "<group>"; };
 		13B07F961A680F5B00A75B9A /* NativeModule.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NativeModule.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		13B07FAF1A68108700A75B9A /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AppDelegate.h; path = NativeModule/AppDelegate.h; sourceTree = "<group>"; };
 		13B07FB01A68108700A75B9A /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AppDelegate.m; path = NativeModule/AppDelegate.m; sourceTree = "<group>"; };
@@ -122,6 +127,16 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
+		0C16F5C523EA9C8B009BB81E /* Hello */ = {
+			isa = PBXGroup;
+			children = (
+				0C16F5C723EA9CA3009BB81E /* Hello.swift */,
+				0C16F5C923EA9CCB009BB81E /* Hello.m */,
+				0C16F5C623EA9CA3009BB81E /* NativeModule-Bridging-Header.h */,
+			);
+			name = Hello;
+			sourceTree = "<group>";
+		};
 		13B07FAE1A68108700A75B9A /* NativeModule */ = {
 			isa = PBXGroup;
 			children = (
@@ -132,6 +147,7 @@
 				13B07FB61A68108700A75B9A /* Info.plist */,
 				13B07FB11A68108700A75B9A /* LaunchScreen.xib */,
 				13B07FB71A68108700A75B9A /* main.m */,
+				0C16F5C523EA9C8B009BB81E /* Hello */,
 			);
 			name = NativeModule;
 			sourceTree = "<group>";
@@ -194,7 +210,6 @@
 				97662D0DBF9D816137F70EEF /* Pods-NativeModuleTests.debug.xcconfig */,
 				F3D87E06A6527485838F3FEF /* Pods-NativeModuleTests.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -230,6 +245,7 @@
 				13B07F8C1A680F5B00A75B9A /* Frameworks */,
 				13B07F8E1A680F5B00A75B9A /* Resources */,
 				00DD1BFF1BD5951E006B06BC /* Bundle React Native code and images */,
+				CE00E8FC6A9BBC4D49DCF18E /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -292,6 +308,11 @@
 						CreatedOnToolsVersion = 6.2;
 						TestTargetID = 13B07F861A680F5B00A75B9A;
 					};
+					13B07F861A680F5B00A75B9A = {
+						DevelopmentTeam = D6W9DTX6X5;
+						LastSwiftMigration = 1100;
+						ProvisioningStyle = Automatic;
+					};
 					2D02E47A1E0B4A5D006451C7 = {
 						CreatedOnToolsVersion = 8.2.1;
 						ProvisioningStyle = Automatic;
@@ -308,6 +329,7 @@
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
 			knownRegions = (
+				English,
 				en,
 				Base,
 			);
@@ -453,6 +475,56 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
+		CE00E8FC6A9BBC4D49DCF18E /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-NativeModule/Pods-NativeModule-resources.sh",
+				"${PODS_ROOT}/WeScan/WeScan/Assets/enhance.png",
+				"${PODS_ROOT}/WeScan/WeScan/Assets/enhance@2x.png",
+				"${PODS_ROOT}/WeScan/WeScan/Assets/enhance@3x.png",
+				"${PODS_ROOT}/WeScan/WeScan/Assets/flash.png",
+				"${PODS_ROOT}/WeScan/WeScan/Assets/flash@2x.png",
+				"${PODS_ROOT}/WeScan/WeScan/Assets/flash@3x.png",
+				"${PODS_ROOT}/WeScan/WeScan/Assets/flashUnavailable.png",
+				"${PODS_ROOT}/WeScan/WeScan/Assets/flashUnavailable@2x.png",
+				"${PODS_ROOT}/WeScan/WeScan/Assets/flashUnavailable@3x.png",
+				"${PODS_ROOT}/WeScan/WeScan/Assets/rotate.png",
+				"${PODS_ROOT}/WeScan/WeScan/Assets/rotate@2x.png",
+				"${PODS_ROOT}/WeScan/WeScan/Assets/rotate@3x.png",
+				"${PODS_ROOT}/WeScan/WeScan/de.lproj/Localizable.strings",
+				"${PODS_ROOT}/WeScan/WeScan/en.lproj/Localizable.strings",
+				"${PODS_ROOT}/WeScan/WeScan/fr.lproj/Localizable.strings",
+				"${PODS_ROOT}/WeScan/WeScan/hu.lproj/Localizable.strings",
+				"${PODS_ROOT}/WeScan/WeScan/it.lproj/Localizable.strings",
+				"${PODS_ROOT}/WeScan/WeScan/pt-BR.lproj/Localizable.strings",
+				"${PODS_ROOT}/WeScan/WeScan/pt-PT.lproj/Localizable.strings",
+				"${PODS_ROOT}/WeScan/WeScan/zh-Hans.lproj/Localizable.strings",
+				"${PODS_ROOT}/WeScan/WeScan/zh-Hant.lproj/Localizable.strings",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/enhance.png",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/enhance@2x.png",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/enhance@3x.png",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/flash.png",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/flash@2x.png",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/flash@3x.png",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/flashUnavailable.png",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/flashUnavailable@2x.png",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/flashUnavailable@3x.png",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/rotate.png",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/rotate@2x.png",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/rotate@3x.png",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/Localizable.strings",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-NativeModule/Pods-NativeModule-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 		FD10A7F022414F080027D42C /* Start Packager */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -530,6 +602,8 @@
 			files = (
 				13B07FBC1A68108700A75B9A /* AppDelegate.m in Sources */,
 				13B07FC11A68108700A75B9A /* main.m in Sources */,
+				0C16F5C823EA9CA3009BB81E /* Hello.swift in Sources */,
+				0C16F5CA23EA9CCB009BB81E /* Hello.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -582,6 +656,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 97662D0DBF9D816137F70EEF /* Pods-NativeModuleTests.debug.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"DEBUG=1",
@@ -605,6 +680,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = F3D87E06A6527485838F3FEF /* Pods-NativeModuleTests.release.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				COPY_PHASE_STRIP = NO;
 				INFOPLIST_FILE = NativeModuleTests/Info.plist;
@@ -626,17 +702,26 @@
 			baseConfigurationReference = 4EA07B0CC34CEBF6B9EF492E /* Pods-NativeModule.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_IDENTITY = "Apple Development";
+				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEAD_CODE_STRIPPING = NO;
+				DEVELOPMENT_TEAM = D6W9DTX6X5;
 				INFOPLIST_FILE = NativeModule/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				OTHER_LDFLAGS = (
 					"$(inherited)",
 					"-ObjC",
 					"-lc++",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "org.reactjs.native.example.$(PRODUCT_NAME:rfc1034identifier)";
+				PRODUCT_BUNDLE_IDENTIFIER = com.AlishaNagpal.NativeModule;
 				PRODUCT_NAME = NativeModule;
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				SWIFT_OBJC_BRIDGING_HEADER = "NativeModule-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
 				VERSIONING_SYSTEM = "apple-generic";
 			};
 			name = Debug;
@@ -646,16 +731,24 @@
 			baseConfigurationReference = DD6F5D4D9B28EB0BB86F095A /* Pods-NativeModule.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_IDENTITY = "Apple Development";
+				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = D6W9DTX6X5;
 				INFOPLIST_FILE = NativeModule/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				OTHER_LDFLAGS = (
 					"$(inherited)",
 					"-ObjC",
 					"-lc++",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "org.reactjs.native.example.$(PRODUCT_NAME:rfc1034identifier)";
+				PRODUCT_BUNDLE_IDENTIFIER = com.AlishaNagpal.NativeModule;
 				PRODUCT_NAME = NativeModule;
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				SWIFT_OBJC_BRIDGING_HEADER = "NativeModule-Bridging-Header.h";
+				SWIFT_VERSION = 5.0;
 				VERSIONING_SYSTEM = "apple-generic";
 			};
 			name = Release;

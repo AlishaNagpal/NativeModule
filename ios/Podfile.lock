@@ -217,6 +217,7 @@ PODS:
     - React-cxxreact (= 0.61.5)
     - React-jsi (= 0.61.5)
     - ReactCommon/jscallinvoker (= 0.61.5)
+  - WeScan (1.4.0)
   - Yoga (1.14.0)
 
 DEPENDENCIES:
@@ -247,11 +248,13 @@ DEPENDENCIES:
   - React-RCTVibration (from `../node_modules/react-native/Libraries/Vibration`)
   - ReactCommon/jscallinvoker (from `../node_modules/react-native/ReactCommon`)
   - ReactCommon/turbomodule/core (from `../node_modules/react-native/ReactCommon`)
+  - WeScan (>= 0.9)
   - Yoga (from `../node_modules/react-native/ReactCommon/yoga`)
 
 SPEC REPOS:
   trunk:
     - boost-for-react-native
+    - WeScan
 
 EXTERNAL SOURCES:
   DoubleConversion:
@@ -331,8 +334,9 @@ SPEC CHECKSUMS:
   React-RCTText: 9ccc88273e9a3aacff5094d2175a605efa854dbe
   React-RCTVibration: a49a1f42bf8f5acf1c3e297097517c6b3af377ad
   ReactCommon: 198c7c8d3591f975e5431bec1b0b3b581aa1c5dd
+  WeScan: 843bc14af0aa32147086fb24aaf6e271334b3cda
   Yoga: f2a7cd4280bfe2cca5a7aed98ba0eb3d1310f18b
 
-PODFILE CHECKSUM: 583bf00d5a79d439fc0e9e4b71053382f8a6f880
+PODFILE CHECKSUM: dcd4f204ec410609ed3a56d14846c15bf71274b4
 
 COCOAPODS: 1.9.0.beta.2

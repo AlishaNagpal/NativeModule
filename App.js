@@ -1,114 +1,73 @@
-/**
- * Sample React Native App
- * https://github.com/facebook/react-native
- *
- * @format
- * @flow
- */
-
 import React from 'react';
-import {
-  SafeAreaView,
-  StyleSheet,
-  ScrollView,
-  View,
-  Text,
-  StatusBar,
-} from 'react-native';
+import { Text, View, NativeEventEmitter, NativeModules, Button } from 'react-native';
+import Styles from './styles';
 
-import {
-  Header,
-  LearnMoreLinks,
-  Colors,
-  DebugInstructions,
-  ReloadInstructions,
-} from 'react-native/Libraries/NewAppScreen';
 
-const App: () => React$Node = () => {
-  return (
-    <>
-      <StatusBar barStyle="dark-content" />
-      <SafeAreaView>
-        <ScrollView
-          contentInsetAdjustmentBehavior="automatic"
-          style={styles.scrollView}>
-          <Header />
-          {global.HermesInternal == null ? null : (
-            <View style={styles.engine}>
-              <Text style={styles.footer}>Engine: Hermes</Text>
-            </View>
-          )}
-          <View style={styles.body}>
-            <View style={styles.sectionContainer}>
-              <Text style={styles.sectionTitle}>Step One</Text>
-              <Text style={styles.sectionDescription}>
-                Edit <Text style={styles.highlight}>App.js</Text> to change this
-                screen and then come back to see your edits.
-              </Text>
-            </View>
-            <View style={styles.sectionContainer}>
-              <Text style={styles.sectionTitle}>See Your Changes</Text>
-              <Text style={styles.sectionDescription}>
-                <ReloadInstructions />
-              </Text>
-            </View>
-            <View style={styles.sectionContainer}>
-              <Text style={styles.sectionTitle}>Debug</Text>
-              <Text style={styles.sectionDescription}>
-                <DebugInstructions />
-              </Text>
-            </View>
-            <View style={styles.sectionContainer}>
-              <Text style={styles.sectionTitle}>Learn More</Text>
-              <Text style={styles.sectionDescription}>
-                Read the docs to discover what to do next:
-              </Text>
-            </View>
-            <LearnMoreLinks />
-          </View>
-        </ScrollView>
-      </SafeAreaView>
-    </>
-  );
-};
+class App extends React.Component {
+  constructor(props) {
+    super(props)
+    this.state = {
+      counter: 0
+    };
+  };
 
-const styles = StyleSheet.create({
-  scrollView: {
-    backgroundColor: Colors.lighter,
-  },
-  engine: {
-    position: 'absolute',
-    right: 0,
-  },
-  body: {
-    backgroundColor: Colors.white,
-  },
-  sectionContainer: {
-    marginTop: 32,
-    paddingHorizontal: 24,
-  },
-  sectionTitle: {
-    fontSize: 24,
-    fontWeight: '600',
-    color: Colors.black,
-  },
-  sectionDescription: {
-    marginTop: 8,
-    fontSize: 18,
-    fontWeight: '400',
-    color: Colors.dark,
-  },
-  highlight: {
-    fontWeight: '700',
-  },
-  footer: {
-    color: Colors.dark,
-    fontSize: 12,
-    fontWeight: '600',
-    padding: 4,
-    paddingRight: 12,
-    textAlign: 'right',
-  },
-});
 
+  handle = () => {
+    NativeModules.Counter.increment()
+    NativeModules.Counter.getCount((first, ...others) => {
+      this.setState({ counter: first })
+      console.warn("count is " + others)
+    })
+  }
+
+  //decrementing with the promise resolve and Reject 
+  handleDec = () => {
+    NativeModules.Counter.decrement()
+      .then(res => console.warn(res))
+      .catch(e => console.warn(e.message, e.code))
+    NativeModules.Counter.getCount((first, ...others) => {
+      this.setState({ counter: first })
+      console.warn("count is " + others)
+    })
+  }
+
+  setValue = () => {
+    NativeModules.Counter.setCounterValue("Hello",(response)=>{
+      console.warn('response =>', response)
+    })
+  }
+
+  //decrementing the counter with the async await and promise resolve and reject
+
+  // handleDec = async () => {
+  //   try {
+  //     const res = await Counter.decrement()
+  //     console.warn(res);
+  //   }
+  //   catch (e) {
+  //     console.warn(e.message, e.code);
+  //   }
+  // }
+
+  render() {
+    return (
+      <View style={Styles.main}>
+        {/* <Text style={Styles.textButton} >Counter:  {this.state.counter} </Text>
+        <Button
+          title="Increment Counter"
+          onPress={() => this.handle()}
+        />
+        <Button
+          title="Decrement Counter"
+          onPress={() => this.handleDec()}
+        /> */}
+        <Button
+          title="Document Scanner"
+          onPress={() => this.setValue()}
+        />
+
+      </View>
+    );
+  }
+}
 export default App;
