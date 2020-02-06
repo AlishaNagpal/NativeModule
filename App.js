@@ -32,9 +32,12 @@ class App extends React.Component {
   }
 
   setValue = () => {
-    NativeModules.Counter.setCounterValue("Hello",(response)=>{
+    Platform.OS === 'ios' 
+    ?  NativeModules.Counter.setCounterValue("Hello",(response)=>{
       console.warn('response =>', response)
     })
+    : ToastModule.show('Error! Doesn\'t Work!');
+   
   }
   toast=()=>{
     Platform.OS === 'ios' 
