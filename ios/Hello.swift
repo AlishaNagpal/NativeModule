@@ -10,7 +10,7 @@ import Foundation
 import WeScan
 import UIKit
 @objc(Counter)
-class Counter: UIViewController,ImageScannerControllerDelegate {
+class Counter: UIViewController,ImageScannerControllerDelegate{
   
   var ScannedImage : Any="";
   
@@ -47,6 +47,28 @@ class Counter: UIViewController,ImageScannerControllerDelegate {
   func imageScannerController(_ scanner: ImageScannerController, didFailWithError error: Error) {
     print(error)
   }
+  
+  @objc
+  func downloadSheet(_ msg: String?)
+  {
+    print("calling downloadSheet")
+    let vc = getTopMostViewController()
+       DispatchQueue.main.async {
+          let actionSheetController: UIAlertController = UIAlertController(title: nil, message: msg, preferredStyle: .actionSheet)
+            vc?.present(actionSheetController, animated: true){
+              print("Item has been printed")
+              let when = DispatchTime.now() + 1
+              DispatchQueue.main.asyncAfter(deadline: when){
+                // your code with delay
+                actionSheetController.dismiss(animated: true){
+                  print("Item has been dismissed")
+                }
+              }
+            }
+        
+       }
+  }
+  
 // private var count=0
 //private var stringCount=""
 //  @objc

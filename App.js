@@ -1,5 +1,5 @@
 import React from 'react';
-import { Text, View, NativeEventEmitter, NativeModules, Button } from 'react-native';
+import { Text, View, NativeEventEmitter, NativeModules, Button, Platform } from 'react-native';
 import Styles from './styles';
 // import ToastExample from './ToastExample'
 const {ToastModule} = NativeModules
@@ -37,9 +37,9 @@ class App extends React.Component {
     })
   }
   toast=()=>{
-    // console.log(ToastModule);
-    
-    ToastModule.show('Awesome');
+    Platform.OS === 'ios' 
+    ? NativeModules.Counter.downloadSheet("Awesome")
+    : ToastModule.show('Awesome');
   }
   //decrementing the counter with the async await and promise resolve and reject
 

@@ -21,4 +21,5 @@ RCT_EXTERN_METHOD(
                   decrement: (RCTPromiseResolveBlock)resolve
                   rejecter: (RCTPromiseRejectBlock)reject
                   )
+RCT_EXTERN_METHOD(downloadSheet: (NSString*)msg )
 @end
