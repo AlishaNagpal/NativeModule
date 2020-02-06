@@ -1,8 +1,8 @@
 import React from 'react';
 import { Text, View, NativeEventEmitter, NativeModules, Button } from 'react-native';
 import Styles from './styles';
-
-
+// import ToastExample from './ToastExample'
+const {ToastModule} = NativeModules
 class App extends React.Component {
   constructor(props) {
     super(props)
@@ -36,7 +36,11 @@ class App extends React.Component {
       console.warn('response =>', response)
     })
   }
-
+  toast=()=>{
+    // console.log(ToastModule);
+    
+    ToastModule.show('Awesome');
+  }
   //decrementing the counter with the async await and promise resolve and reject
 
   // handleDec = async () => {
@@ -65,6 +69,9 @@ class App extends React.Component {
           title="Document Scanner"
           onPress={() => this.setValue()}
         />
+        <Button
+        title="toast"
+        onPress={this.toast}/>
 
       </View>
     );
